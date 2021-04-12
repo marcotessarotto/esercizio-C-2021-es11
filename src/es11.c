@@ -9,9 +9,9 @@
 
 
 #define NUMERO_DI_CICLI_DEFAULT 10
-#define INTERVALLO_DEFAULT 5
+#define INTERVALLO_DEFAULT 1
 
-#define DEBUG
+//#define DEBUG
 
 // tratto da:
 // https://github.com/marcotessarotto/exOpSys/blob/91cd55d7f17402f15bbf6b0649956270ea5e39f6/004.4pass-array-to-function/pass-array-to-function.c#L55
@@ -27,6 +27,9 @@ double calculate_average2_double(double * data, int data_len) {
 
 	return d;
 }
+
+// definito nel file bubblesort.c
+void bubble_sort_double(double * array, int array_dimension);
 
 
 int main(int argc, char * argv[]) {
@@ -209,8 +212,20 @@ alla fine del ciclo:
 seconda parte dell'esercizio:
 
 il processo padre fa il sort crescente dei valori rilevati nel ciclo principale;
-poi inserisce il va
+poi inserisce il valore medio calcolato dal processo figlio nella posizione opportuna dell'array ordinato,
+per mantenere l'ordinamento del nuovo array.
+
  */
+
+	// sort di array di double:
+
+	bubble_sort_double(valori_load, numero_di_cicli);
+
+	printf("\ndopo ordinamento:\n");
+	for (int i = 0; i < numero_di_cicli; i++) {
+		printf("valori_load[%d] = %lf\n", i, valori_load[i]);
+	}
+
 
     return 0;
 }
