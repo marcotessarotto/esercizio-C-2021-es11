@@ -241,7 +241,7 @@ per mantenere l'ordinamento del nuovo array.
 
 
 
-
+// il vettore 'array' deve essere ordinato in maniera crescente
 double * insert_into_sorted_array_double(double * array, int array_len, double val) {
 	if (array == NULL) {
 		return NULL;
