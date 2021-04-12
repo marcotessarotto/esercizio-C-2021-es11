@@ -32,8 +32,6 @@ int * result = insert_into_array(int_array, int_array_len, -1, 3);
 // insert_into_array(int_array, int_array_len, -1, 6);
 // {0,1,2,3,4,5,-1}
 
-// insert_into_array(int_array, int_array_len, -1, 6);
-// NULL
  */
 
 int * insert_into_sorted_array(int * array, int array_len, int val, int insert_position) {
