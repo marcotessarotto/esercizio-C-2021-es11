@@ -51,14 +51,14 @@ int * insert_into_sorted_array(int * array, int array_len, int val, int insert_p
 	}
 
 	// se insert_position == int_array_len, il valore da aggiungere viene messo in coda all'array
-	if (insert_position == array_len) {
-		// copiamo tutti i valori ed in coda aggiungiamo val
-		memcpy(result, array, array_len * sizeof(int));
-
-		result[array_len] = val;
-
-		return result;
-	}
+//	if (insert_position == array_len) {
+//		// copiamo tutti i valori ed in coda aggiungiamo val
+//		memcpy(result, array, array_len * sizeof(int));
+//
+//		result[array_len] = val;
+//
+//		return result;
+//	}
 
 	memcpy(result, array, insert_position * sizeof(int));
 
