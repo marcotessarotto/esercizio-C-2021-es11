@@ -31,6 +31,8 @@ double calculate_average2_double(double * data, int data_len) {
 // definito nel file bubblesort.c
 void bubble_sort_double(double * array, int array_dimension);
 
+double * insert_into_sorted_array_double(double * array, int array_len, double val);
+
 
 int main(int argc, char * argv[]) {
 
@@ -226,7 +228,48 @@ per mantenere l'ordinamento del nuovo array.
 		printf("valori_load[%d] = %lf\n", i, valori_load[i]);
 	}
 
+	//
+	double * final_result = insert_into_sorted_array_double(valori_load,numero_di_cicli, valor_medio );
+
+	printf("\ndopo inserimento del valor medio nell'array:\n");
+	for (int i = 0; i < numero_di_cicli+1; i++) {
+		printf("final_result[%d] = %lf\n", i, final_result[i]);
+	}
 
     return 0;
 }
+
+
+
+
+double * insert_into_sorted_array_double(double * array, int array_len, double val) {
+	if (array == NULL) {
+		return NULL;
+	}
+
+	double * result = malloc((array_len+1) * sizeof(double));
+	if (result == NULL) {
+		perror("malloc");
+		return NULL;
+	}
+
+	int pos = 0;
+	while (pos <= array_len) {
+		if (array[pos] < val)
+			pos++;
+		else
+			break;
+	}
+
+	memcpy(result, array, pos * sizeof(double));
+
+	result[pos] = val;
+
+	memcpy(&result[pos+1], &array[pos], (array_len-pos) * sizeof(double));
+
+	//la funzione restituisce l'indirizzo dell'array modificato
+	return result;
+}
+
+
 
