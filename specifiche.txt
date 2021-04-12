@@ -1,1 +1,29 @@
-...
+****esercizio 11****
+
+usare l'esempio:
+https://replit.com/@MarcoTessarotto/get-load-average
+
+scrivere un programma in C che faccia quanto segue:
+
+il programma prevede come parametri a linea di comando due valori (int):
+numero di cicli (default: 10)
+intervallo (secondi) (default: 5)
+
+se i parametri non sono forniti, usare i valori di default indicati sopra.
+
+crea il file log.txt per scriverci di dati ottenuti sotto; il file viene sovrascritto, se esiste già.
+
+per 'numero di cicli' volte, a distanza di 'intervallo' secondi, rileva il 'load average over 1 minute' 
+(vedi getloadavg() ed esempio fornito);
+ad ogni interazione scrive il valore in formato testo all'interno del file 'log.txt'.
+
+
+alla fine del ciclo:
+- il processo padre crea un processo figlio che calcola e scrive su stdout il valor medio dei valori di 'load average over 1 minute' ottenuti nel ciclo sopra
+- il processo figlio scrive il valor medio calcolato in un file 'result.txt' ; il numero è scritto in formato testo
+- il processo padre aspetta la terminazione del processo figlio; poi legge il valore calcolato dal processo figlio dal file 'result.txt'
+
+seconda parte dell'esercizio:
+
+il processo padre fa il sort crescente dei valori rilevati nel ciclo principale; 
+poi inserisce il valore medio calcolato dal processo figlio nella posizione opportuna dell'array ordinato, per mantenere l'ordinamento del nuovo array.
